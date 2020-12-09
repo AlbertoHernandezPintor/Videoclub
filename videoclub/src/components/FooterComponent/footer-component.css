@@ -1,0 +1,14 @@
+.footer {
+    color: white;
+    background-color: #524E59;
+    height: 2em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 500px) {
+    .footer {
+        height: 3em;
+    }
+}

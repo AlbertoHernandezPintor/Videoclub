@@ -1,0 +1,37 @@
+.page-title {
+    font-size: 6em;
+    font-weight: bold;
+    color: #e50914;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-top: #e50914 solid 1px;
+    border-bottom: #e50914 solid 1px;
+    width: fit-content;
+    margin: auto;
+}
+
+.login-page {
+    background-color: black;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.login-button {
+    background-color: #e50914 !important;
+    border: black solid 1px !important;
+}
+
+.login-button:hover {
+    background-color: black !important;
+    border: #e50914 solid 1px !important;
+}
+
+.login-card {
+    width: fit-content;
+    height: fit-content;
+}
+
+@media (max-width: 500px) {
+    .page-title {
+        font-size: 3em;
+    }
+}
