@@ -22,7 +22,9 @@ class FilmComponent extends React.Component {
     render () {
         let props = {
             film: this.props.film,
-            goToDetail: this.goToDetail
+            goToDetail: this.goToDetail,
+            isRent: this.props.isRent,
+            rent: this.props.rent
         }
 
         return Template({ ...props });

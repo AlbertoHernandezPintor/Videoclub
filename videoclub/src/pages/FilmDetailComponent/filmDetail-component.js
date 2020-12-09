@@ -1,6 +1,7 @@
 import React from 'react';
 import Template from './filmDetail-component.template';
 import films from '../../assets/json/billboardFilms.json';
+import ReactStars from "react-rating-stars-component";
 
 /*  Página que muestra el detalle de una película */
 class FilmDetailComponent extends React.Component {
@@ -10,7 +11,10 @@ class FilmDetailComponent extends React.Component {
     
         this.state = {
           film: "",
+          stars: 0,
         }
+
+        this.setStars = this.setStars.bind(this);
     }
 
     /*  Método que se ejecuta al montar la página   */
@@ -21,19 +25,32 @@ class FilmDetailComponent extends React.Component {
         /*  Buscamos la película seleccionada   */
         for(let i = 0; i < films.length; i++) {
             if(films[i].id.toString() === idFilm) {
-                console.log("Hola");
                 this.setState({
-                    film: films[i]
+                    film: films[i],
+                    stars: films[i].stars
                 })
             }
         }
+    }
 
-        
+    setStars() {
+        if(this.state.film) {
+            return (
+                <ReactStars
+                    count={ 5 }
+                    size={ 24 }
+                    activeColor="#ffd700"
+                    isHalf={ true }
+                    value={ this.state.film.stars }
+                />
+            );
+        }
     }
     
     render () {
         let props = {
-            film: this.state.film
+            film: this.state.film,
+            stars: this.setStars
         }
 
         return Template({ ...props });

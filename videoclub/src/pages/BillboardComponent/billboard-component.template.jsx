@@ -45,7 +45,7 @@ export default (props) =>  {
             </div>
 
             <Row className="mt-4 mb-5">
-                { props.billboardFilms.map(film => <Col sm="4" className="mb-3" key={ film.id }><Film film={ film } history={ props.history }></Film></Col>) }
+                { props.billboardFilms.map(film => <Col sm="4" className="mb-3" key={ film.id }><Film film={ film } history={ props.history } isRent={ false }></Film></Col>) }
             </Row>
 
             <Footer></Footer>

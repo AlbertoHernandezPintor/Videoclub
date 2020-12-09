@@ -1,5 +1,22 @@
 .film-card {
-    cursor: pointer;
     width: 20em;
     height: fit-content;
+}
+
+.film-card-body {
+    cursor: pointer;
+}
+
+.rent-buttons {
+    background-color: #e50914 !important;
+    border: black solid 1px !important;
+    border-radius: 0.5em;
+    color: white;
+}
+
+.rent-buttons:hover {
+    background-color: black !important;
+    border: #e50914 solid 1px !important;
+    border-radius: 0.5em;
+    color: white;
 }

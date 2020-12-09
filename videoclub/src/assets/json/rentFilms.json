@@ -10,7 +10,8 @@
         "image": "https://www.ecartelera.com/carteles/15500/15551/001.jpg",
         "stars": 2.5,
         "id": 0,
-        "duration": "125 min."
+        "duration": "125 min.",
+        "price": "3€/día"
     },
 
     {
@@ -24,7 +25,8 @@
         "image": "https://es.web.img3.acsta.net/pictures/20/09/03/13/27/0306515.jpg",
         "stars": 3,
         "id": 1,
-        "duration": "138 min."
+        "duration": "138 min.",
+        "price": "8€/día"
     },
 
     {
@@ -38,7 +40,8 @@
         "image": "https://www.ecartelera.com/carteles/15500/15549/002_m.jpg",
         "stars": 2.5,
         "id": 2,
-        "duration": "92 min."
+        "duration": "92 min.",
+        "price": "12€/día"
     },
 
     {
@@ -52,7 +55,8 @@
         "image": "https://www.ecartelera.com/carteles/16000/16058/002_m.jpg",
         "stars": 3,
         "id": 3,
-        "duration": "110 min."
+        "duration": "110 min.",
+        "price": "4€/día"
     },
 
     {
@@ -66,7 +70,8 @@
         "image": "https://www.ecartelera.com/carteles/15900/15907/002_m.jpg",
         "stars": 3,
         "id": 4,
-        "duration": "96 min."
+        "duration": "96 min.",
+        "price": "6€/día"
     },
 
     {
@@ -80,6 +85,7 @@
         "image": "https://www.ecartelera.com/carteles/16400/16472/001_m.jpg",
         "stars": 3.5,
         "id": 5,
-        "duration": "100 min."
+        "duration": "100 min.",
+        "price": "3€/día"
     }
 ]

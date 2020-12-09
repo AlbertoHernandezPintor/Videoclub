@@ -3,15 +3,60 @@ import React from 'react';
 import './filmDetail-component.css';
 import Footer from '../../components/FooterComponent/footer-component';
 import Menu from '../../components/MenuComponent/menu-component';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default (props) =>  {
     return (
-        <Container fluid className="billboard-page p-0 text-center">
+        <Container fluid className="billboard-page p-0">
             <Menu></Menu>
-            <div className="filmDetail mt-2">
-                <h1>{ props.film.title }</h1>
-            </div>
+            <Row>
+                <Col md="6" sm="12" className="d-flex align-items-center">
+                    <Row>
+                        <Col sm="12"  className="text-center">
+                            <Row> 
+                                <Col sm="12" className="filmDetail">
+                                    <h1>{ props.film.title }</h1>
+                                </Col>
+
+                                <Col sm="12" className="filmDetail">
+                                    <h5>{ props.film.originalTitle }</h5>
+                                </Col>
+                            </Row>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-4">
+                            <h5>Año: { props.film.year }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2">
+                            <h5>País: { props.film.country }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2">
+                            <h5>Director: { props.film.director }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2">
+                            <h5>Sinopsis: { props.film.synopsis }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2">
+                            <h5>Género: { props.film.genre }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2">
+                            <h5>Duración: { props.film.duration }</h5>
+                        </Col>
+
+                        <Col sm="12" className="filmDetails mt-2 film-stars">
+                            { props.stars() }
+                        </Col>
+                    </Row>
+                </Col>
+                <Col md="6" sm="12" className="d-flex justify-content-center align-items-center image-col">
+                    <img src={ props.film.image } alt={ props.film.title }></img>
+                </Col>
+            </Row>
             <Footer></Footer>
         </Container>
     );

@@ -1,3 +1,17 @@
 .filmDetail {
     color: white;
 }
+
+.filmDetails {
+    color: white;
+    margin-left: 3em;
+    margin-right: 1.5em;
+}
+
+.image-col {
+    height: 80vh;
+}
+
+.film-stars {
+    pointer-events: none;
+}
