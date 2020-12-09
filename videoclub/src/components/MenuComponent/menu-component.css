@@ -1,0 +1,14 @@
+.menu-title {
+    color: #e50914 !important;
+    font-weight: bold !important;
+    font-size: 2.5em !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+}
+
+.menu-pages {
+    font-size: 1.5em !important;
+}
+
+.menu-link:hover {
+    color: black !important;
+}

@@ -1,0 +1,85 @@
+[
+    {
+        "title": "La vieja guardia",
+        "originalTitle": "The Old Guard",
+        "year": 2020,
+        "country": "Estados Unidos",
+        "director": "Gina Prince-Bythewood",
+        "synopsis": "Un grupo de mercenarios inmortales liderado por una guerrera llamada Andy (Charlize Theron) ha luchado para proteger el mundo durante siglos. Pero cuando el equipo es reclutado para ejecutar una misión de emergencia y sus extraordinarias habilidades salen a la luz, Andy y Nile (Kiki Lane), la soldado más joven en unirse al grupo, tendrán que ayudar a sus compañeros a eliminar la amenaza de aquellos que buscan replicar y beneficiarse de sus poderes a toda costa...",
+        "genre": "Fantástico, Acción, Cómic",
+        "image": "https://pics.filmaffinity.com/the_old_guard-768938280-mmed.jpg",
+        "stars": 2.5,
+        "id": 0,
+        "duration": "125 min."
+    },
+
+    {
+        "title": "El diablo a todas horas",
+        "originalTitle": "The Devil All the Time",
+        "year": 2020,
+        "country": "Estados Unidos",
+        "director": "Antonio Campos",
+        "synopsis": "Desesperado por salvar a su mujer, Willard Russell convierte sus oraciones en un sacrificio. Las acciones de Russel llevan a su hijo Arvin a pasar de ser un niño que sufre abusos en el instituto a convertirse en un hombre que sabe cuándo y cómo ha de pasar a la acción. Los acontecimientos que se dan lugar en Knockemstiff (Ohio) desatan una tormenta de fe, violencia y redención que se desarrolla a lo largo de dos décadas.",
+        "genre": "Thriller, Drama, Vida rural (Norteamérica), Asesinos en serie, Años 60, Años 50, Crimen, Religión",
+        "image": "https://pics.filmaffinity.com/the_devil_all_the_time-216752531-mmed.jpg",
+        "stars": 3,
+        "id": 1,
+        "duration": "138 min."
+    },
+
+    {
+        "title": "Orígenes secretos",
+        "originalTitle": "Orígenes secretos",
+        "year": 2020,
+        "country": "España",
+        "director": "David Galán Galindo",
+        "synopsis": "Madrid 2019. Un asesino en serie está sembrando el caos. Personas anónimas están siendo asesinadas imitando las primeras apariciones de los súper héroes más conocidos. Cosme es el mejor detective de su comisaría, y está a punto de jubilarse contra su voluntad. David es su relevo, y es joven e impulsivo. Ambos tendrán la misión de encajar las piezas en un juego del que desconocen las reglas. En su aventura contarán con la ayuda de Jorge Elías, hijo de Cosme, entrañable friki y dueño de una tienda de cómics y de Norma, jefa de ambos y amante del manga y del cosplay. Dicen que algunas veces hay que ponerse el traje y salir a hacer de este mundo un lugar mejor. Puede que esta sea una de ellas.",
+        "genre": "Thriller, Asesinos en serie, Superhéroes",
+        "image": "https://pics.filmaffinity.com/origenes_secretos-124821325-mmed.jpg",
+        "stars": 2.5,
+        "id": 2,
+        "duration": "92 min."
+    },
+
+    {
+        "title": "Fantasy Island",
+        "originalTitle": "Fantasy Island",
+        "year": 2020,
+        "country": "Estados Unidos",
+        "director": "Jeff Wadlow",
+        "synopsis": "El enigmático Sr. Roarke hace realidad los sueños de los afortunados huéspedes que acuden a su lujoso y remoto resort tropical. Sin embargo, sus fantasías se convertirán en pesadillas, y los invitados deberán resolver el misterio que oculta la isla para poder escapar con vida. Adaptación del famoso programa de televisión de los años 70, ambientado en un resort ubicado en una isla mágica.",
+        "genre": "Aventuras, Fantástico, Intriga, Terror",
+        "image": "https://pics.filmaffinity.com/fantasy_island-728077499-mmed.jpg",
+        "stars": 3,
+        "id": 3,
+        "duration": "110 min."
+    },
+
+    {
+        "title": "Padre no hay más que uno 2",
+        "originalTitle": "Padre no hay más que uno 2: La llegada de la suegra",
+        "year": 2020,
+        "country": "España",
+        "director": "Santiago Segura",
+        "synopsis": "Con el triunfo de la asistente virtual 'Conchi', Javier (Santiago Segura) se ha convertido en líder del chat de madres y todo marcha sobre ruedas. Parece tenerlo todo bajo control, pero la noticia inesperada de la llegada de un nuevo bebé lo pone todo patas arriba. Y para rematar, llegará la suegra.",
+        "genre": "Comedia, Secuela, Familia",
+        "image": "https://pics.filmaffinity.com/padre_no_hay_mas_que_uno_2_la_llegada_de_la_suegra-719430009-mmed.jpg",
+        "stars": 3,
+        "id": 4,
+        "duration": "96 min."
+    },
+
+    {
+        "title": "Cajas oscuras",
+        "originalTitle": "Black Box",
+        "year": 2020,
+        "country": "Estados Unidos",
+        "director": "Emmanuel Osei-Kuffour",
+        "synopsis": "Un hombre lucha por recuperar la memoria después de sobrevivir a un trágico accidente automovilístico. Desesperado por volver a ser él mismo mientras intenta criar a su hija, recibe un tratamiento experimental que lo ayuda a indagar en un pasado que de repente se siente demasiado oscuro para ser el suyo.",
+        "genre": "Terror, Ciencia ficción, Thriller, Thriller psicológico",
+        "image": "https://pics.filmaffinity.com/black_box-644760139-mmed.jpg",
+        "stars": 3.5,
+        "id": 5,
+        "duration": "100 min."
+    }
+]

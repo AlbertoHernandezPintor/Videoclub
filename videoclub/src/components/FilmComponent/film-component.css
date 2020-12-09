@@ -1,0 +1,5 @@
+.film-card {
+    cursor: pointer;
+    width: 20em;
+    height: fit-content;
+}

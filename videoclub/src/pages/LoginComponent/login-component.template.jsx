@@ -2,6 +2,7 @@
 import React from 'react';
 import './login-component.css';
 import Footer from '../../components/FooterComponent/footer-component';
+import AlertDimissible from '../../components/AlertDimissibleComponent/AlertDimissible-component';
 import { Container, Row, Col, Card, Form, Button, InputGroup, FormControl } from 'react-bootstrap';
 
 export default (props) =>  {
@@ -35,6 +36,8 @@ export default (props) =>  {
 
                                 <Button type="submit" className="mb-3 login-button">Iniciar sesión</Button>
                             </Form>
+
+                            <AlertDimissible type="warning" message="Debe introducir un nombre de usuario" show={ props.showAlert } setShow={ props.setShow }></AlertDimissible>
                         </Card.Body>
                     </Card>
                 </Col>

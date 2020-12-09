@@ -1,0 +1,17 @@
+.billboard-page {
+    background-color: black;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.page-title {
+    font-size: 4em;
+}
+
+.page-subtitle {
+    color: white;
+}
+
+img {
+    height: 25em !important;
+}
