@@ -6,6 +6,7 @@ import RentComponent from './pages/RentComponent/rent-component';
 import FilmDetailComponent from './pages/FilmDetailComponent/filmDetail-component';
 import MyFilmsComponent from './pages/MyFilmsComponent/myFilms-component';
 import WatchFilmComponent from './pages/WatchFilmComponent/watchFilm-component';
+import CinemasComponent from './pages/CinemasComponent/cinemas-component';
 
 // Rutas de la página web del videoclub
 const Routes = () => {
@@ -17,6 +18,7 @@ const Routes = () => {
             <Route path = '/filmDetail' component = { FilmDetailComponent }/>
             <Route path = '/watchFilm' component = { WatchFilmComponent }/>
             <Route path = '/myFilms' component = { MyFilmsComponent }/>
+            <Route path = '/cinemas' component = { CinemasComponent }/>
         </Switch>
    );
 }

@@ -14,7 +14,7 @@ export default (props) =>  {
                 <Menu></Menu>
     
                 <div className="page-title mt-3">
-                    Mis películas
+                    MIS PELÍCULAS
                 </div>
 
                 <div className="page-subtitle d-flex justify-content-center mt-5">

@@ -13,6 +13,7 @@ export default (props) =>  {
                     <Nav.Link href={ props.billboardRoute } className="menu-link">Cartelera</Nav.Link>
                     <Nav.Link href={ props.rentRoute } className="menu-link">Alquiler</Nav.Link>
                     <Nav.Link href={ props.myFilmsRoute } className="menu-link">Mis películas</Nav.Link>
+                    <Nav.Link href={ props.cinemasRoute } className="menu-link">Cines</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

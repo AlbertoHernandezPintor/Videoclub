@@ -1,7 +1,7 @@
 import React from 'react';
 import Template from './myFilms-component.template';
 
-/*  Página en la que se muestran las péliculas disponibles para alquiler y la posibilidad de alquilarlas    */
+/*  Página en la que se muestran las péliculas alquiladas por el usuario para su visualización   */
 class MyFilmsComponent extends React.Component {
 
     constructor(props) {
