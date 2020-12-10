@@ -9,7 +9,8 @@ class MenuComponent extends React.Component {
     
         this.state = {
           billboardRoute: "",
-          rentRoute: ""
+          rentRoute: "",
+          myFilmsRoute: ""
         }
     }
 
@@ -21,7 +22,8 @@ class MenuComponent extends React.Component {
         this.setState(function(){
             return {
                 billboardRoute: "/billboard?username=" + url.searchParams.get("username"),
-                rentRoute: "/rent?username=" + url.searchParams.get("username")
+                rentRoute: "/rent?username=" + url.searchParams.get("username"),
+                myFilmsRoute: "/myFilms?username=" + url.searchParams.get("username")
             }
         });
     }
@@ -29,7 +31,8 @@ class MenuComponent extends React.Component {
     render () {
         let props = {
             billboardRoute: this.state.billboardRoute,
-            rentRoute: this.state.rentRoute
+            rentRoute: this.state.rentRoute,
+            myFilmsRoute: this.state.myFilmsRoute
         }
 
         return Template({ ...props });

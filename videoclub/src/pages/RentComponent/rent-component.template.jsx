@@ -16,7 +16,7 @@ export default (props) =>  {
             </div>
 
             <Row className="mt-4 mb-5">
-                { props.rentFilms.map(film => <Col sm="4" className="mb-3" key={ film.id }><Film film={ film } history={ props.history } isRent={ true } rent={ props.rent }></Film></Col>) }
+                { props.rentFilms.map(film => <Col sm="4" className="mb-3" key={ film.id }><Film film={ film } history={ props.history } isRent={ true } myFilms={ false }></Film></Col>) }
             </Row>
 
             <Footer></Footer>

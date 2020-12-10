@@ -23,6 +23,7 @@ class FilmComponent extends React.Component {
         this.confirmRent = this.confirmRent.bind(this);
         this.confirmEndRent = this.confirmEndRent.bind(this);
         this.endRent = this.endRent.bind(this);
+        this.watchFilm = this.watchFilm.bind(this);
     }
 
     componentDidMount() {
@@ -66,14 +67,26 @@ class FilmComponent extends React.Component {
     }
 
     endRent() {
+        let url = new URL(document.location.href);
+
+        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+
         var currentDate = new Date();
         var currentDay = currentDate.getDate();
         var currentMonth = currentDate.getMonth() + 1;
         var currentYear = currentDate.getFullYear();
         var date = currentDay + "/" + currentMonth + "/" + currentYear;
 
-        var days = User.compareDates(this.props.film.startDate, date);
-        var total = days * this.props.film.price;
+        var days;
+        var total;
+
+        for(let i = 0; i < user.rentFilms.length; i++) {
+            if(user.rentFilms[i].id.toString() === this.props.film.id.toString()) {
+                days = User.compareDates(user.rentFilms[i].startDate, date);
+                total = days * this.props.film.price;
+                break;
+            }
+        }
 
         this.setState(function(){
             return {
@@ -121,6 +134,15 @@ class FilmComponent extends React.Component {
         });
     }
 
+    watchFilm() {
+        let url = new URL(document.location.href);
+
+        this.props.history.push({
+          pathname: '/watchFilm',
+          search: '?username='+url.searchParams.get("username")+'&id='+this.props.film.id
+        })
+    }
+
     render () {
         let props = {
             film: this.props.film,
@@ -136,7 +158,9 @@ class FilmComponent extends React.Component {
             typeModal: this.state.typeModal,
             confirmEndRent: this.confirmEndRent,
             total: this.state.total,
-            days: this.state.days
+            days: this.state.days,
+            myFilms: this.props.myFilms,
+            watchFilm: this.watchFilm
         }
 
         return Template({ ...props });
