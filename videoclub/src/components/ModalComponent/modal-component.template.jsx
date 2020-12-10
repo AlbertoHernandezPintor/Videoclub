@@ -5,20 +5,37 @@ import { Modal, Button } from 'react-bootstrap';
 
 export default (props) =>  {
 
-    if (props.show) {
+    if (props.show && props.typeModal === "rent") {
         return (
-            <Modal.Dialog>
+            <Modal.Dialog className="modal-dialog">
                 <Modal.Header>
-                    <Modal.Title>Modal title</Modal.Title>
+                    <Modal.Title>Alquiler de película</Modal.Title>
                 </Modal.Header>
 
                 <Modal.Body>
-                    <p>Modal body text goes here.</p>
+                    <p>Va a proceder a alquilar la película por { props.film.price }€/día. ¿Está seguro?</p>
                 </Modal.Body>
 
-                <Modal.Footer>
-                    <Button variant="secondary">Close</Button>
-                    <Button variant="primary">Save changes</Button>
+                <Modal.Footer className="d-flex justify-content-center">
+                    <Button variant="secondary" onClick={ props.onHide }>Cancelar</Button>
+                    <Button variant="primary" onClick={ props.confirmRent }>Continuar</Button>
+                </Modal.Footer>
+            </Modal.Dialog>
+        );
+    } else if (props.show && props.typeModal === "endRent"){ 
+        return (
+            <Modal.Dialog className="modal-dialog">
+                <Modal.Header>
+                    <Modal.Title>Alquiler de película</Modal.Title>
+                </Modal.Header>
+
+                <Modal.Body>
+                    <p>Va a proceder a dejar de alquilar la película. Se le va a proceder a cobrar { props.total }€ debido a que la película se ha alquilado { props.days } días. ¿Está seguro?</p>
+                </Modal.Body>
+
+                <Modal.Footer className="d-flex justify-content-center">
+                    <Button variant="secondary" onClick={ props.onHide }>Cancelar</Button>
+                    <Button variant="primary" onClick={ props.confirmEndRent }>Continuar</Button>
                 </Modal.Footer>
             </Modal.Dialog>
         );

@@ -20,3 +20,8 @@
     border-radius: 0.5em;
     color: white;
 }
+
+.rent-buttons:disabled {
+    opacity: 50%;
+    pointer-events: none;
+}

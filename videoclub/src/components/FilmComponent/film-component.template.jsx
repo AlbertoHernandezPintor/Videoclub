@@ -2,6 +2,7 @@
 import React from 'react';
 import './film-component.css';
 import { Card } from 'react-bootstrap';
+import Modal from '../../components/ModalComponent/modal-component';
 
 export default (props) =>  {
     return (
@@ -11,9 +12,10 @@ export default (props) =>  {
                 
                 <img src={ props.film.image } alt={ props.film.title }></img>
             </Card.Body>
+            <Modal show={ props.modalShow } onHide={ props.onHide } days={ props.days } total={ props.total } film={ props.film } confirmRent={ props.confirmRent } confirmEndRent={ props.confirmEndRent } typeModal={ props.typeModal }></Modal>
             <Card.Footer hidden={ !props.isRent }>
-                <button type="button" className="rent-buttons mr-2" onClick={ props.rent }>Alquilar</button>
-                <button type="button" className="rent-buttons">Finalizar alquiler</button>
+                <button type="button" className="rent-buttons mr-2" onClick={ props.rent } disabled={ props.allowRent }>Alquilar</button>
+                <button type="button" className="rent-buttons"  onClick={ props.endRent } disabled={ props.allowEndRent }>Finalizar alquiler</button>
             </Card.Footer>
         </Card>
     );

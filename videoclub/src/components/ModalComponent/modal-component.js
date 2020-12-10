@@ -5,10 +5,15 @@ import Template from './modal-component.template';
 class RentComponent extends React.Component {
 
     render () {
-        console.log(this.props.show);
         let props = {
             onHide: this.props.onHide,
-            show: this.props.show
+            show: this.props.show,
+            film: this.props.film,
+            confirmRent: this.props.confirmRent,
+            typeModal: this.props.typeModal,
+            confirmEndRent: this.props.confirmEndRent,
+            days: this.props.days,
+            total: this.props.total
         }
 
         return Template({ ...props });
