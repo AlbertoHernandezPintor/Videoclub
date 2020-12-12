@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
 import React from 'react';
-import './cinemas-component.css';
+import './myProfile-component.css';
 import Footer from '../../components/FooterComponent/footer-component';
 import Menu from '../../components/MenuComponent/menu-component';
 import { Container } from 'react-bootstrap';
@@ -11,7 +11,7 @@ export default () =>  {
             <Menu></Menu>
 
             <div className="page-title mt-3">
-                CINES
+                MI PERFIL   
             </div>
 
             <Footer></Footer>

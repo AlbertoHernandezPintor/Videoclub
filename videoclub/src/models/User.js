@@ -2,9 +2,12 @@
 /*  username: Nombre del usuario    */
 class User {
 
-    constructor(username, rentFilms) {
+    constructor(username, rentFilms, seenMovies, pendingMovies, ratingFilms) {
         this.username = username;
         this.rentFilms = rentFilms;
+        this.seenMovies = seenMovies;
+        this.pendingMovies = pendingMovies;
+        this.ratingFilms = ratingFilms;
     }
 
     /*  Método para guardar el usuario en el local storage  */

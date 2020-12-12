@@ -1,0 +1,21 @@
+.lists-text {
+    color: white;
+}
+
+.seen-movies-list {
+    border-right: 1px solid #e50914;
+}
+
+.lists {
+    min-height: 30em;
+}
+
+@media (max-width: 550px) {
+    .seen-movies-list {
+        border-right: none;
+    }
+
+    .lists {
+        min-height: 15em;
+    }
+}

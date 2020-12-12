@@ -25,7 +25,7 @@ class LoginComponent extends React.Component {
         /*  Si no se ha introducido ningún nombre se muestra una alerta, sino  */
         /*  se procede a acceder a la web con el usuario introducido           */
         if (this.state.username !== "") {
-            var user = new User(this.state.username, []);
+            var user = new User(this.state.username, [], [], [], []);
       
             /*  Si no existía el usuario, se crea, sino se guarda en la sesión el usuario con  */
             /*  el cual se está accediendo                                                     */

@@ -13,9 +13,13 @@ class FilmDetailComponent extends React.Component {
         this.state = {
           film: "",
           stars: 0,
+          seen: false,
+          pending: false
         }
 
         this.setStars = this.setStars.bind(this);
+        this.markPendingMovie = this.markPendingMovie.bind(this);
+        this.markSeenMovie = this.markSeenMovie.bind(this);
     }
 
     /*  Método que se ejecuta al montar la página   */
@@ -23,6 +27,24 @@ class FilmDetailComponent extends React.Component {
         let url = new URL(document.location.href);
         let idFilm = url.searchParams.get("id");
         let isRent = url.searchParams.get("isRent");
+
+        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        
+        for(let i = 0; i < user.seenMovies.length; i++) {
+            if(user.seenMovies[i].id.toString() === idFilm) {
+                this.setState({
+                    seen: true
+                })
+            }
+        }
+
+        for(let i = 0; i < user.pendingMovies.length; i++) {
+            if(user.pendingMovies[i].id.toString() === idFilm) {
+                this.setState({
+                    pending: true
+                })
+            }
+        }
 
         /*  Buscamos la película seleccionada   */
         if (isRent === "true") {
@@ -59,11 +81,57 @@ class FilmDetailComponent extends React.Component {
             );
         }
     }
+
+    markPendingMovie() {
+        let url = new URL(document.location.href);
+        let idFilm = url.searchParams.get("id");
+        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        user.pendingMovies.push(this.state.film);
+        localStorage.setItem(url.searchParams.get("username"), JSON.stringify(user));
+
+        for(let i = 0; i < user.seenMovies.length; i++) {
+            if(user.seenMovies[i].id.toString() === idFilm) {
+                var user1 = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+                user1.seenMovies.splice(i, 1);
+                localStorage.setItem(url.searchParams.get("username"), JSON.stringify(user1));
+            }
+        }
+
+        this.setState({
+            seen: false,
+            pending: true
+        })
+    }
+
+    markSeenMovie() {
+        let url = new URL(document.location.href);
+        let idFilm = url.searchParams.get("id");
+        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        user.seenMovies.push(this.state.film);
+        localStorage.setItem(url.searchParams.get("username"), JSON.stringify(user));
+
+        for(let i = 0; i < user.pendingMovies.length; i++) {
+            if(user.pendingMovies[i].id.toString() === idFilm) {
+                var user1 = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+                user1.pendingMovies.splice(i, 1);
+                localStorage.setItem(url.searchParams.get("username"), JSON.stringify(user1));
+            }
+        }
+
+        this.setState({
+            seen: true,
+            pending: false
+        })
+    }
     
     render () {
         let props = {
             film: this.state.film,
-            stars: this.setStars
+            stars: this.setStars,
+            seen: this.state.seen,
+            pending: this.state.pending,
+            markSeenMovie: this.markSeenMovie,
+            markPendingMovie: this.markPendingMovie
         }
 
         return Template({ ...props });

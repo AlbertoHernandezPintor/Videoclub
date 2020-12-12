@@ -11,7 +11,8 @@ class MenuComponent extends React.Component {
           billboardRoute: "",
           rentRoute: "",
           myFilmsRoute: "",
-          cinemasRoute: ""
+          myProfileRoute: "",
+          listsRoute: ""
         }
     }
 
@@ -25,7 +26,8 @@ class MenuComponent extends React.Component {
                 billboardRoute: "/billboard?username=" + url.searchParams.get("username"),
                 rentRoute: "/rent?username=" + url.searchParams.get("username"),
                 myFilmsRoute: "/myFilms?username=" + url.searchParams.get("username"),
-                cinemasRoute: "/cinemas?username=" + url.searchParams.get("username")
+                myProfileRoute: "/myProfile?username=" + url.searchParams.get("username"),
+                listsRoute: "/lists?username=" + url.searchParams.get("username")
             }
         });
     }
@@ -35,7 +37,8 @@ class MenuComponent extends React.Component {
             billboardRoute: this.state.billboardRoute,
             rentRoute: this.state.rentRoute,
             myFilmsRoute: this.state.myFilmsRoute,
-            cinemasRoute: this.state.cinemasRoute
+            myProfileRoute: this.state.myProfileRoute,
+            listsRoute: this.state.listsRoute
         }
 
         return Template({ ...props });

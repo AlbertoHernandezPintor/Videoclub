@@ -51,6 +51,11 @@ export default (props) =>  {
                         <Col sm="12" className="filmDetails mt-2 film-stars">
                             { props.stars() }
                         </Col>
+
+                        <Col sm="12" className="text-center mt-2">
+                            <button type="button" className="rent-buttons mr-2" onClick={ props.markSeenMovie } disabled={ props.seen }>Marcar como vista</button>
+                            <button type="button" className="rent-buttons" onClick={ props.markPendingMovie } disabled={ props.pending }>Marcar como pendiente</button>
+                        </Col>
                     </Row>
                 </Col>
                 <Col md="6" sm="12" className="d-flex justify-content-center align-items-center image-col">

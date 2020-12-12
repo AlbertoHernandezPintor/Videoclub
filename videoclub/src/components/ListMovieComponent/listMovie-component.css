@@ -1,0 +1,8 @@
+.list-film-card {
+    color: black;
+    width: 100%;
+}
+
+.trash {
+    cursor: pointer;
+}
