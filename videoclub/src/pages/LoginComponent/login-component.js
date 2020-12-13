@@ -1,6 +1,6 @@
 import React from 'react';
 import Template from './login-component.template';
-import User from '../../models/User'
+import User from '../../models/User';
 
 /*  Página de login del videoclub   */
 class LoginComponent extends React.Component {
@@ -25,7 +25,13 @@ class LoginComponent extends React.Component {
         /*  Si no se ha introducido ningún nombre se muestra una alerta, sino  */
         /*  se procede a acceder a la web con el usuario introducido           */
         if (this.state.username !== "") {
-            var user = new User(this.state.username, [], [], [], []);
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var startDate = day + "/" + month + "/" + year;
+
+            var user = new User(this.state.username, [], [], [], [], startDate, "", "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png");
       
             /*  Si no existía el usuario, se crea, sino se guarda en la sesión el usuario con  */
             /*  el cual se está accediendo                                                     */

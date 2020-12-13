@@ -1,0 +1,49 @@
+.myProfile {
+    color: white;
+}
+
+.myProfile-details {
+    margin-left: 3em;
+    margin-right: 1.5em;
+    font-weight: bold;
+}
+
+.rating {
+    pointer-events: none;
+}
+
+.profile-photo {
+    width: 25em;
+    height: 10em;
+}
+
+@media (max-width: 500px) {
+    .profile-photo {
+        width: 15em !important;
+        height: 15em !important;
+        margin-bottom: 3em;
+    }
+}
+
+.inputFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label[for="avatar"] {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #e50914;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 15px 40px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+}

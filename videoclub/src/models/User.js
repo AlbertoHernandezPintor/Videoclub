@@ -2,12 +2,15 @@
 /*  username: Nombre del usuario    */
 class User {
 
-    constructor(username, rentFilms, seenMovies, pendingMovies, ratingFilms) {
+    constructor(username, rentFilms, seenMovies, pendingMovies, ratingFilms, startDate, lastRentFilm, profilePhoto) {
         this.username = username;
         this.rentFilms = rentFilms;
         this.seenMovies = seenMovies;
         this.pendingMovies = pendingMovies;
         this.ratingFilms = ratingFilms;
+        this.startDate = startDate;
+        this.lastRentFilm = lastRentFilm;
+        this.profilePhoto = profilePhoto;
     }
 
     /*  Método para guardar el usuario en el local storage  */
@@ -33,6 +36,8 @@ class User {
 
         film.startDate = day + "/" + month + "/" + year;
         user.rentFilms.push(film);
+
+        user.lastRentFilm = film;
 
         localStorage.setItem(username, JSON.stringify(user));
     }
@@ -63,6 +68,28 @@ class User {
             var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
             return dias;
         }
+    }
+
+    static getWorstRating(ratingFilms) {
+        var worstRating = ratingFilms[0];
+        for(var i = 0; i < ratingFilms.length; i++) {
+            if (ratingFilms[i].rating < worstRating.rating) {
+                worstRating = ratingFilms[i];
+            }
+        }
+
+        return worstRating;
+    }
+
+    static getBestRating(ratingFilms) {
+        var bestRating = ratingFilms[0];
+        for(var i = 0; i < ratingFilms.length; i++) {
+            if (ratingFilms[i].rating > bestRating.rating) {
+                bestRating = ratingFilms[i];
+            }
+        }
+
+        return bestRating;
     }
 }
 
