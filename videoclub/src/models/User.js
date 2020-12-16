@@ -1,5 +1,4 @@
 /*  Clase usuario                   */
-/*  username: Nombre del usuario    */
 class User {
 
     constructor(username, rentFilms, seenMovies, pendingMovies, ratingFilms, startDate, lastRentFilm, profilePhoto) {
