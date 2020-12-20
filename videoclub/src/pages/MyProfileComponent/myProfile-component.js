@@ -23,69 +23,91 @@ class MyProfileComponent extends React.Component {
         }
 
         this.changePhoto = this.changePhoto.bind(this);
+        this.endSession = this.endSession.bind(this);
     }
 
     componentDidMount() {
         let url = new URL(document.location.href);
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
 
-        var lastRentFilm;
-        if(user.lastRentFilm === "") {
-            lastRentFilm = "No se han alquilado películas aún";
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
         } else {
-            lastRentFilm = user.lastRentFilm.title;
-        }
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
 
-        var bestFilm;
-        var worstFilm;
-        if(this.state.bestRating.filmTitle !== "No hay películas valoradas") {
-            bestFilm = false;
-            worstFilm = false;
-        } else {
-            bestFilm = true;
-            worstFilm = true;
+            var lastRentFilm;
+            if(user.lastRentFilm === "") {
+                lastRentFilm = "No se han alquilado películas aún";
+            } else {
+                lastRentFilm = user.lastRentFilm.title;
+            }
+    
+            var bestFilm;
+            var worstFilm;
+            if(this.state.bestRating.filmTitle !== "No hay películas valoradas") {
+                bestFilm = false;
+                worstFilm = false;
+            } else {
+                bestFilm = true;
+                worstFilm = true;
+            }
+    
+            this.setState({
+                startDate: user.startDate,
+                username: url.searchParams.get("username"),
+                lastRentFilm: lastRentFilm,
+                bestFilm: bestFilm,
+                worstFilm: worstFilm,
+                countPendingFilms: user.pendingMovies.length,
+                countRentFilms: user.rentFilms.length,
+                countSeenFilms: user.seenMovies.length,
+                profilePhoto: user.profilePhoto
+            })
         }
-
-        this.setState({
-            startDate: user.startDate,
-            username: url.searchParams.get("username"),
-            lastRentFilm: lastRentFilm,
-            bestFilm: bestFilm,
-            worstFilm: worstFilm,
-            countPendingFilms: user.pendingMovies.length,
-            countRentFilms: user.rentFilms.length,
-            countSeenFilms: user.seenMovies.length,
-            profilePhoto: user.profilePhoto
-        })
     }
 
     setBestRating() {
         let url = new URL(document.location.href);
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
-        
-        var bestRating;
-        if (user.ratingFilms.length === 0) {
-            bestRating = {filmTitle: "No hay películas valoradas"};
-        } else {
-            bestRating = User.getBestRating(user.ratingFilms);
-        }
 
-        return bestRating;
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else {
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        
+            var bestRating;
+            if (user.ratingFilms.length === 0) {
+                bestRating = {filmTitle: "No hay películas valoradas"};
+            } else {
+                bestRating = User.getBestRating(user.ratingFilms);
+            }
+    
+            return bestRating;
+        }
     }
 
 
     setWorstRating() {
         let url = new URL(document.location.href);
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
-        
-        var worstRating;
-        if (user.ratingFilms.length === 0) {
-            worstRating = {filmTitle: "No hay películas valoradas"};
-        } else {
-            worstRating = User.getWorstRating(user.ratingFilms);
-        }
 
-        return worstRating;
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else {
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        
+            var worstRating;
+            if (user.ratingFilms.length === 0) {
+                worstRating = {filmTitle: "No hay películas valoradas"};
+            } else {
+                worstRating = User.getWorstRating(user.ratingFilms);
+            }
+    
+            return worstRating;
+        }
     }
 
     changePhoto(event) {
@@ -100,6 +122,14 @@ class MyProfileComponent extends React.Component {
 
         this.setState({
             profilePhoto: newProfilePhoto
+        })
+    }
+
+    endSession() {
+        sessionStorage.clear();
+
+        this.props.history.push({
+            pathname: '/',
         })
     }
 
@@ -118,7 +148,8 @@ class MyProfileComponent extends React.Component {
             countPendingFilms: this.state.countPendingFilms,
             countSeenFilms: this.state.countSeenFilms,
             profilePhoto: this.state.profilePhoto,
-            changePhoto: this.changePhoto
+            changePhoto: this.changePhoto,
+            endSession: this.endSession
         }
 
         return Template({ ...props });

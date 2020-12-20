@@ -21,23 +21,30 @@ class ListsComponent extends React.Component {
 
     componentDidMount() {
         let url = new URL(document.location.href);
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
 
-        this.setState({
-            pendingMovies: user.pendingMovies,
-            seenMovies: user.seenMovies
-        })
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else {
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
 
-        if(user.seenMovies.length === 0) {
             this.setState({
-                emptySeenFilms: false
+                pendingMovies: user.pendingMovies,
+                seenMovies: user.seenMovies
             })
-        }
-        
-        if (user.pendingMovies.length === 0) {
-            this.setState({
-                emptyPendingFilms: false
-            })
+    
+            if(user.seenMovies.length === 0) {
+                this.setState({
+                    emptySeenFilms: false
+                })
+            }
+            
+            if (user.pendingMovies.length === 0) {
+                this.setState({
+                    emptyPendingFilms: false
+                })
+            }
         }
     }
 

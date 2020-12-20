@@ -29,20 +29,26 @@ class FilmComponent extends React.Component {
     componentDidMount() {
         let url = new URL(document.location.href);
 
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else {
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
 
-        if(user.rentFilms.length > 0) {
-            for(var i = 0; i < user.rentFilms.length; i++){
-                if(user.rentFilms[i].id === this.props.film.id){
-                    this.setState(function() {
-                        return {
-                          modalShow: false,
-                          allowRent: true,
-                          allowEndRent: false
-                        }
-                    });
-
-                    break;
+            if(user.rentFilms.length > 0) {
+                for(var i = 0; i < user.rentFilms.length; i++){
+                    if(user.rentFilms[i].id === this.props.film.id){
+                        this.setState(function() {
+                            return {
+                              modalShow: false,
+                              allowRent: true,
+                              allowEndRent: false
+                            }
+                        });
+    
+                        break;
+                    }
                 }
             }
         }

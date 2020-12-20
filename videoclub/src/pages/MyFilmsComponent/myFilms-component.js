@@ -14,6 +14,15 @@ class MyFilmsComponent extends React.Component {
         }
     }
 
+    componentDidMount() {
+        let url = new URL(document.location.href);
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        }
+    }
+
     render () {
         let props = {
             history: this.props.history,

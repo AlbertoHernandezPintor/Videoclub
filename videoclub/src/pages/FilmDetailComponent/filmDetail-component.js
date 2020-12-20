@@ -25,47 +25,54 @@ class FilmDetailComponent extends React.Component {
     /*  Método que se ejecuta al montar la página   */
     componentDidMount() {
         let url = new URL(document.location.href);
-        let idFilm = url.searchParams.get("id");
-        let isRent = url.searchParams.get("isRent");
 
-        var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
-        
-        for(let i = 0; i < user.seenMovies.length; i++) {
-            if(user.seenMovies[i].id.toString() === idFilm) {
-                this.setState({
-                    seen: true
-                })
-            }
-        }
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else  {
+            let idFilm = url.searchParams.get("id");
+            let isRent = url.searchParams.get("isRent");
 
-        for(let i = 0; i < user.pendingMovies.length; i++) {
-            if(user.pendingMovies[i].id.toString() === idFilm) {
-                this.setState({
-                    pending: true
-                })
-            }
-        }
-
-        /*  Buscamos la película seleccionada   */
-        if (isRent === "true") {
-            for(let i = 0; i < rentFilms.length; i++) {
-                if(rentFilms[i].id.toString() === idFilm) {
+            var user = JSON.parse(localStorage.getItem(url.searchParams.get("username")));
+            
+            for(let i = 0; i < user.seenMovies.length; i++) {
+                if(user.seenMovies[i].id.toString() === idFilm) {
                     this.setState({
-                        film: rentFilms[i],
-                        stars: rentFilms[i].stars
+                        seen: true
                     })
                 }
             }
-        } else {
-            for(let i = 0; i < films.length; i++) {
-                if(films[i].id.toString() === idFilm) {
+
+            for(let i = 0; i < user.pendingMovies.length; i++) {
+                if(user.pendingMovies[i].id.toString() === idFilm) {
                     this.setState({
-                        film: films[i],
-                        stars: films[i].stars
+                        pending: true
                     })
                 }
             }
-        }   
+
+            /*  Buscamos la película seleccionada   */
+            if (isRent === "true") {
+                for(let i = 0; i < rentFilms.length; i++) {
+                    if(rentFilms[i].id.toString() === idFilm) {
+                        this.setState({
+                            film: rentFilms[i],
+                            stars: rentFilms[i].stars
+                        })
+                    }
+                }
+            } else {
+                for(let i = 0; i < films.length; i++) {
+                    if(films[i].id.toString() === idFilm) {
+                        this.setState({
+                            film: films[i],
+                            stars: films[i].stars
+                        })
+                    }
+                }
+            }   
+        }
     }
 
     setStars() {

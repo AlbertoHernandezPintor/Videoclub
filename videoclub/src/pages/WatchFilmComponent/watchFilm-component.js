@@ -16,16 +16,23 @@ class WatchFilmComponent extends React.Component {
     /*  Método que se ejecuta al montar la página   */
     componentDidMount() {
         let url = new URL(document.location.href);
-        let idFilm = url.searchParams.get("id");
 
-        /*  Buscamos la película seleccionada   */
-        for(let i = 0; i < rentFilms.length; i++) {
-            if(rentFilms[i].id.toString() === idFilm) {
-                this.setState({
-                    film: rentFilms[i],
-                })
-            }
-        } 
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        } else {
+            let idFilm = url.searchParams.get("id");
+
+            /*  Buscamos la película seleccionada   */
+            for(let i = 0; i < rentFilms.length; i++) {
+                if(rentFilms[i].id.toString() === idFilm) {
+                    this.setState({
+                        film: rentFilms[i],
+                    })
+                }
+            } 
+        }
     }
 
     render () {

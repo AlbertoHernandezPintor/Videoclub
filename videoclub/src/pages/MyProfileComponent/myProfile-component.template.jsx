@@ -56,6 +56,9 @@ export default (props) =>  {
                         <Col className="myProfile-details mt-4 mb-2" sm="12">
                             <p>Películas pendientes: { props.countPendingFilms }</p>
                         </Col>
+                        <Col className="myProfile-details mb-2 d-flex justify-content-center" sm="12">
+                            <button type="button" className="mr-2 end-session-button mb-2" onClick={ props.endSession }>Cerrar sesión</button>
+                        </Col>
                     </Row>
                 </Col>
 

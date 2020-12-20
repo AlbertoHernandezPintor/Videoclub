@@ -21,6 +21,15 @@ class RentComponent extends React.Component {
         this.sortByPriceDesc = this.sortByPriceDesc.bind(this);
     }
 
+    componentDidMount() {
+        let url = new URL(document.location.href);
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        }
+    }
+
     sortByDateAsc() {
         this.setState({
             films: Sorter.sortByDateAsc(films)

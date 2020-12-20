@@ -13,6 +13,15 @@ class BillboardComponent extends React.Component {
 
         return Template({ ...props });
     }
+
+    componentDidMount() {
+        let url = new URL(document.location.href);
+        if(sessionStorage.getItem(url.searchParams.get("username")) === null){
+            this.props.history.push({
+                pathname: '/error',
+            })
+        }
+    }
 }
 
 export default BillboardComponent;

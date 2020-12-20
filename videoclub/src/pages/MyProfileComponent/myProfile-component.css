@@ -47,3 +47,17 @@ label[for="avatar"] {
     width: fit-content;
     text-align: center;
 }
+
+.end-session-button {
+    background-color: #e50914 !important;
+    border: black solid 1px !important;
+    border-radius: 5em;
+    color: white;
+    width: 15em;
+    height: 3em;
+}
+
+.end-session-button:hover {
+    background-color: black !important;
+    border: #e50914 solid 1px !important;
+}
